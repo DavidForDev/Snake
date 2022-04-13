@@ -1,0 +1,154 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(background.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+
+#game-board {
+    width: 100vmin;
+    height: 100vmin;
+    background: rgb(41, 37, 37);
+    box-shadow: 0px 0px 41px 2px red;
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+    grid-template-rows: repeat(40, 1fr);
+}
+
+
+.head {
+    background: teal;
+    box-shadow: 0px 0px 21px 2px teal;
+    border: 1px solid rgb(55, 55, 55);
+    z-index: 1;
+}
+.snake {
+    background: honeydew;
+    box-shadow: 0px 0px 11px 2px honeydew;
+    border: 1px solid rgb(55, 55, 55);
+    z-index: 1;
+}
+.food {
+    background: red;
+    box-shadow: 0px 0px 21px 2px red;
+    animation: food .5s ease-in-out infinite alternate;
+}
+
+
+.score-box {
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    font-family: 'lato';
+}
+.score-box p {
+    font-size: 30px;
+    color: white;
+}
+.score {
+    color: red;
+    margin-left: 5px;
+}
+
+
+.over-box {
+    width: 80%;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    background-color: rgba(41, 37, 37, 0.651);
+    color: white;
+    font-family: 'lato';
+    display: none;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0px 0px 11px 2px white;
+}
+.over-title {
+    text-align: center;
+}
+.over-title h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+.over-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.resgame {
+    width: 150px;
+    height: 40px;
+    font-size: 40px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    animation: resgame 2s ease;
+}
+
+.mobile-controller {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(204, 203, 203);
+    position: absolute;
+    bottom: 0px;
+    z-index: 11;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.controller {
+    position: absolute;
+}
+
+.controller i {
+    font-size: 42px;
+}
+
+.up-down-btn {
+    width: 57px;
+    height: 17vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -40px;
+}
+
+.left-right-btn {
+    width: 36vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+}
+
+@keyframes resgame {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+
+@media screen and (max-width: 425px) {
+    .mobile-controller {
+        display: flex;
+    }
+}
